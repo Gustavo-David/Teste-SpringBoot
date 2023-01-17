@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>
 			org.springframework.boot
-		</groupId>
+		</groupId>SS
 		<artifactId>
 			spring-boot-starter-parent
 		</artifactId>
@@ -37,6 +37,12 @@
 		</java.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>
 				org.springframework.boot
