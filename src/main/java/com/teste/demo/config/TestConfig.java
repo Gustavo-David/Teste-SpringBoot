@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.teste.demo.Entities.Category;
+import com.teste.demo.Entities.Enum.OrderStatus;
 import com.teste.demo.Entities.Order;
 import com.teste.demo.Entities.OrderItem;
 import com.teste.demo.Entities.Payment;
 import com.teste.demo.Entities.Product;
 import com.teste.demo.Entities.User;
-import com.teste.demo.Entities.Enum.OrderStatus;
 import com.teste.demo.repositories.CategoryRepository;
 import com.teste.demo.repositories.OrderItemRepository;
 import com.teste.demo.repositories.OrderRepository;
@@ -29,7 +29,7 @@ public class TestConfig implements CommandLineRunner {
     private UserRepository userRepository;
 
     @Autowired
-    private OrderRepository OrderRepository;
+    private OrderRepository orderRepository;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -73,7 +73,7 @@ public class TestConfig implements CommandLineRunner {
         Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITTING_PAYMENT, u1);
 
         userRepository.saveAll(Arrays.asList(u1, u2));
-        OrderRepository.saveAll(Arrays.asList(o1, o2, o3));
+        orderRepository.saveAll(Arrays.asList(o1, o2, o3));
 
         OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice());
         OrderItem oi2 = new OrderItem(o1, p3, 1, p3.getPrice());
@@ -87,7 +87,7 @@ public class TestConfig implements CommandLineRunner {
 
         o1.setPayment(pay1);
 
-        OrderRepository.save(o1);
+        orderRepository.save(o1);
     }
 
 }

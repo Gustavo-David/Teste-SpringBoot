@@ -3,8 +3,6 @@ package com.teste.demo.Entities;
 import java.io.Serializable;
 import java.time.Instant;
 
-import org.apache.logging.log4j.CloseableThreadContext.Instance;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
