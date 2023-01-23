@@ -13,7 +13,7 @@ import com.teste.demo.Entities.Order;
 import com.teste.demo.services.OrderServices;
 
 @RestController
-@RequestMapping(value = "/Orders")
+@RequestMapping(value = "/orders")
 
 public class OrderResource {
 
